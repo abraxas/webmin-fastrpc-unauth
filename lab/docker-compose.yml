@@ -1,0 +1,22 @@
+name: webminh02
+
+services:
+  webmin:
+    image: webmin-lab:2.670
+    ports:
+      - "127.0.0.1:18480:10000"
+      - "127.0.0.1:18481:10001"
+      - "127.0.0.1:18482:10002"
+      - "127.0.0.1:18483:10003"
+      - "127.0.0.1:18484:10004"
+    mem_limit: 512m
+    init: true
+    labels:
+      lab: WEBMIN-H02-FASTRPC
+    restart: "no"
+    networks:
+      - webminh02
+
+networks:
+  webminh02:
+    driver: bridge
